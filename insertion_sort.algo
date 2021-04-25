@@ -1,0 +1,27 @@
+ALGORITHM ins_sorting
+
+VAR tab : ARRAY_OF INTEGER;
+VAR key : INTEGER;
+VAR i,j : INTEGER;
+    
+BEGIN
+
+    Write("Write an array of integers");
+    Read(tab);
+
+        FOR i FROM 1 TO tab.length-1 STEP 1 DO
+            key := tab[i];
+            j := i - 1;
+        
+            WHILE ((j >= 0) && (tab[j] > key)) DO
+                tab[j+1] := tab[j];
+                j := j - 1;
+            END_WHILE
+
+            tab[j+1] := key;
+
+        END_FOR
+
+    Write(tab);
+    
+END
